@@ -4,57 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAMÍLIA CLAUSSEN DE PAPE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny" rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@2.0.4"
         integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
         crossorigin="anonymous"></script>
         <style>
             body {
-                background-color: #ffd6f2;
-                max-width: 72ch;
-                margin: auto auto;
+                background-color: #e9ffd6; /*#ffd6f2*/
+                /*max-width: 100ch;*/
+                margin: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
-            div {
-                background-color: #f9f9f9;
+            .container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #main:hover, #family:hover {
+                background-color: #90ffa2;
+                color: #000000;
+            }
+            #main, #family {
+                background-color: #6bc873;
                 padding: 10px;
                 margin-bottom: 10px;
                 cursor: pointer;
-                border-radius: 10px;
+                border-radius: 30px;
+                color: #ffffff;
+                text-align: center;
+                font-family: Coiny, auto;
+                width: 600px;
             }
-            div:hover {
-                background-color: #f0f0f0;
-            }
-            #main {
-                background-color: #f0f0f0;
-                padding: 10px;
-                margin-bottom: 10px;
+            #main:hover {
+                background-color: #90ffa2;
+                color: #000000;
             }
             footer {
                 text-align: center;
                 margin-top: 20px;
+                font-family: Coiny, auto;
             }
         </style>
 </head>
 
 <body>
+    <div class="container">
     <div id="main">
         <h1>FAMÍLIA CLAUSSEN DE PAPE</h1>
     </div>
 
-    <div hx-get="./bio/pai.html" hx-swap="innerHTML" hx-target="#main">
+    <div id="family" hx-get="./bio/pai.html" hx-swap="innerHTML" hx-target="#main">
         Pai
     </div>
 
-    <div hx-get="./bio/mãe.html" hx-swap="innerHTML" hx-target="#main">
+    <div id="family" hx-get="./bio/mãe.html" hx-swap="innerHTML" hx-target="#main">
         Mãe
     </div>
 
-    <div hx-get="./bio/eu.html" hx-swap="innerHTML" hx-target="#main">
+    <div id="family" hx-get="./bio/eu.html" hx-swap="innerHTML" hx-target="#main">
         Filha
     </div>
 
     <footer>
         Vê o site do <a href="https://htmx.org/">HTMX</a> para mais informação sobre esta tecnologia.
     </footer>
+    </div>
+    <img src="imagem/freepik__background__30192.png" alt="Background Image">
 </body>
 
 </html>

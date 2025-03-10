@@ -46,32 +46,41 @@
                 margin-top: 20px;
                 font-family: Coiny, auto;
             }
+            .image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+            }
         </style>
 </head>
 
 <body>
     <div class="container">
-    <div id="main">
-        <h1>FAMÍLIA CLAUSSEN DE PAPE</h1>
-    </div>
+        <div id="main">
+            <h1>FAMÍLIA CLAUSSEN DE PAPE</h1>
+        </div>
 
-    <div id="family" hx-get="./bio/pai.html" hx-swap="innerHTML" hx-target="#main">
-        Pai
-    </div>
+        <div id="family" hx-get="./bio/pai.html" hx-swap="innerHTML" hx-target="#main">
+            Pai
+        </div>
 
-    <div id="family" hx-get="./bio/mãe.html" hx-swap="innerHTML" hx-target="#main">
-        Mãe
-    </div>
+        <div id="family" hx-get="./bio/mãe.html" hx-swap="innerHTML" hx-target="#main">
+            Mãe
+        </div>
 
-    <div id="family" hx-get="./bio/eu.html" hx-swap="innerHTML" hx-target="#main">
-        Filha
-    </div>
+        <div id="family" hx-get="./bio/eu.html" hx-swap="innerHTML" hx-target="#main">
+            Filha
+        </div>
 
-    <footer>
-        Vê o site do <a href="https://htmx.org/">HTMX</a> para mais informação sobre esta tecnologia.
-    </footer>
+        <footer>
+            Vê o site do <a href="https://htmx.org/">HTMX</a> para mais informação sobre esta tecnologia.
+        </footer>
     </div>
-    <img src="imagem/freepik__background__30192.png" alt="Background Image">
+    <div class="image">
+        <img src="imagem/freepik__background__30193.jpeg" alt="Background Image">
+    </div>
 </body>
 
 </html>

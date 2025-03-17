@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAMÍLIA CLAUSSEN DE PAPE</title>
     <link href="https://fonts.googleapis.com/css2?family=Coiny" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/htmx.org@2.0.4"
         integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
         crossorigin="anonymous"></script>
@@ -62,6 +63,22 @@
             <h1>FAMÍLIA CLAUSSEN DE PAPE</h1>
         </div>
 
+        <div id="family" hx-get="./bio/avô.html" hx-swap="innerHTML" hx-target="#main">
+            Avô
+        </div>
+        
+        <div id="family" hx-get="./bio/avó.html" hx-swap="innerHTML" hx-target="#main">
+            Avó
+        </div>
+
+        <div id="family" hx-get="./bio/pai.html" hx-swap="innerHTML" hx-target="#main">
+            Opa
+        </div>
+
+        <div id="family" hx-get="./bio/mãe.html" hx-swap="innerHTML" hx-target="#main">
+            Oma
+        </div>
+
         <div id="family" hx-get="./bio/pai.html" hx-swap="innerHTML" hx-target="#main">
             Pai
         </div>
@@ -78,9 +95,9 @@
             Vê o site do <a href="https://htmx.org/">HTMX</a> para mais informação sobre esta tecnologia.
         </footer>
     </div>
-    <div class="image">
-        <img src="imagem/freepik__background__30193.jpeg" alt="Background Image">
-    </div>
+
+    <hx get="bio/foto.html" swap="outerHTML" target="#main" class="image"></hx>
+    
 </body>
 
 </html>

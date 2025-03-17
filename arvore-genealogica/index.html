@@ -9,95 +9,218 @@
     <script src="https://unpkg.com/htmx.org@2.0.4"
         integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
         crossorigin="anonymous"></script>
-        <style>
-            body {
-                background-color: #e9ffd6; /*#ffd6f2*/
-                /*max-width: 100ch;*/
-                margin: 30px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .container{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            #main:hover, #family:hover {
-                background-color: #90ffa2;
-                color: #000000;
-            }
-            #main, #family {
-                background-color: #6bc873;
-                padding: 10px;
-                margin-bottom: 10px;
-                cursor: pointer;
-                border-radius: 30px;
-                color: #ffffff;
-                text-align: center;
-                font-family: Coiny, auto;
-                width: 600px;
-            }
-            #main:hover {
-                background-color: #90ffa2;
-                color: #000000;
-            }
-            footer {
-                text-align: center;
-                margin-top: 20px;
-                font-family: Coiny, auto;
-            }
-            .image {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                width: 100%;
-            }
-        </style>
+    <style>
+        body {
+            background-color: #e9ffd6;
+            background-image: url("./imagem/gramado3.png");
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 30px;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+        .imagem {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px
+        }
+        
+        .nome {
+            font-size: 80px;
+            line-height: 1;
+        }
+
+        .container{
+            text-align: center;
+            font-family: Coiny, auto;
+            font-size: 30px;
+            margin: auto;
+        }
+
+        #main:hover, #family:hover {
+            background-color: #90ffa2a5;
+            color: #000000;
+            border: solid 3px #90ffa2;
+        }
+
+        #main, #family {
+            background-color: #6bc873a5;
+            padding: 30px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            border-radius: 100px;
+            color: #ffffff;
+            width: 100%;
+            border: solid 3px #6bc873;
+        }
+
+        #main {
+            font-size: 30px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-family: Coiny, auto;  
+        }
+          
+        a:link {
+            color: #ffffff;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #ffffff;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #90ffa2;
+            background-color: transparent;
+        }
+
+        a:active {
+            color: #6bc873;
+            background-color: transparent;
+        }
+
+        footer {
+            font-size: 20px;
+        }
+
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 600px;
+        }
+
+        .pessoa {
+            padding: 3px;
+            margin: 15px;
+            width: 100%;
+        }
+
+        .ante {
+            min-height: 50px;
+            display: flex;
+        }
+
+        .ident {
+            display: flex;
+            justify-content: center;
+        }
+
+        #spinner {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+        }
+
+    </style>
 </head>
 
-<body>
+<body><div class="htmx-indicator" id="spinner"><img src="./imagem/spinner.gif" ></div>
     <div class="container">
+
         <div id="main">
             <h1>FAMÍLIA CLAUSSEN DE PAPE</h1>
         </div>
 
-        <div id="family" hx-get="./bio/avô.html" hx-swap="innerHTML" hx-target="#main">
-            Avô
-        </div>
         
-        <div id="family" hx-get="./bio/avó.html" hx-swap="innerHTML" hx-target="#main">
-            Avó
+        <div class="pessoa">
+            <div class="ante">
+                <!-- Antecessores -->
+                <div class="pessoa">
+                    <div class="ante">
+                        <div class="pessoa">
+                            <div class="ante">
+                                <!-- Antecessores -->
+                            </div>
+                            <div class="ident">
+                                <div id="family" hx-get="./bio/opa.html" hx-swap="innerHTML" hx-target="#main" hx-indicator="#spinner">
+                                    Opa
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="pessoa">
+                            <div class="ante">
+                                <!-- Antecessores -->
+                            </div>
+                            <div class="ident">
+                                <div id="family" hx-get="./bio/oma.html" hx-swap="innerHTML" hx-target="#main" hx-indicator="#spinner">
+                                    Oma
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ident">
+                        <div id="family" hx-get="./bio/pai.html" hx-swap="innerHTML" hx-target="#main" hx-indicator="#spinner">
+                            Pai
+                        </div>
+                    </div>
+                </div>
+                <div class="pessoa">
+                    <div class="ante">
+                        <div class="pessoa">
+                            <div class="ante">
+                                <!-- Antecessores -->
+                            </div>
+                            <div class="ident">
+                                <div id="family" hx-get="./bio/avô.html" hx-swap="innerHTML" hx-target="#main" hx-indicator="#spinner">
+                                    Avô
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pessoa">
+                            <div class="ante">
+                                <!-- Antecessores -->
+                            </div>
+                            <div class="ident">
+                                <div id="family" hx-get="./bio/avó.html" hx-swap="innerHTML" hx-target="#main" hx-indicator="#spinner">
+                                    Avó
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ident">
+                        <div id="family" hx-get="./bio/mãe.html" hx-swap="innerHTML" hx-target="#main" hx-indicator="#spinner">
+                            Mãe
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ident">
+                <div id="family" hx-get="./bio/eu.html" hx-swap="innerHTML" hx-target="#main" hx-indicator="#spinner">
+                    Eu
+                </div>
+            </div>
         </div>
-
-        <div id="family" hx-get="./bio/pai.html" hx-swap="innerHTML" hx-target="#main">
-            Opa
-        </div>
-
-        <div id="family" hx-get="./bio/mãe.html" hx-swap="innerHTML" hx-target="#main">
-            Oma
-        </div>
-
-        <div id="family" hx-get="./bio/pai.html" hx-swap="innerHTML" hx-target="#main">
-            Pai
-        </div>
-
-        <div id="family" hx-get="./bio/mãe.html" hx-swap="innerHTML" hx-target="#main">
-            Mãe
-        </div>
-
-        <div id="family" hx-get="./bio/eu.html" hx-swap="innerHTML" hx-target="#main">
-            Filha
-        </div>
-
-        <footer>
-            Vê o site do <a href="https://htmx.org/">HTMX</a> para mais informação sobre esta tecnologia.
-        </footer>
+  
     </div>
 
-    <p hx get="bio/foto.html" swap="outerHTML" target="#main" class="image"></p>
-    
+    <footer>
+        Vê o site do <a href="https://htmx.org/">HTMX</a> para mais informação sobre esta tecnologia.
+    </footer>
+    </div>
+
+
 </body>
 
 </html>
